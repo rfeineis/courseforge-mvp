@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{COURSE_TITLE}}</title>
+  <script src="scorm.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f5;
+      overflow: hidden;
+    }
+
+    .player-container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    .player-header {
+      background: #fff;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .player-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .exit-button {
+      background: #dc3545;
+      color: white;
+      border: none;
+      padding: 0.5rem 1.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .exit-button:hover {
+      background: #c82333;
+    }
+
+    .player-content {
+      flex: 1;
+      display: flex;
+      overflow: hidden;
+    }
+
+    .slide-container {
+      flex: 1;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      overflow-y: auto;
+    }
+
+    .slide-image {
+      max-width: 100%;
+      max-height: 60vh;
+      object-fit: contain;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .slide-content {
+      max-width: 800px;
+      width: 100%;
+    }
+
+    .slide-summary {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #333;
+      margin-bottom: 2rem;
+    }
+
+    .quiz-container {
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    .quiz-question {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .quiz-option {
+      background: #fff;
+      border: 2px solid #e0e0e0;
+      border-radius: 6px;
+      padding: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .quiz-option:hover {
+      border-color: #6366f1;
+      background: #f8f9ff;
+    }
+
+    .quiz-option.selected {
+      border-color: #6366f1;
+      background: #eef2ff;
+    }
+
+    .quiz-option.correct {
+      border-color: #10b981;
+      background: #d1fae5;
+    }
+
+    .quiz-option.incorrect {
+      border-color: #ef4444;
+      background: #fee2e2;
+    }
+
+    .quiz-explanation {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .navigation {
+      background: #fff;
+      border-top: 1px solid #e0e0e0;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-button {
+      background: #6366f1;
+      color: white;
+      border: none;
+      padding: 0.75rem 2rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .nav-button:hover:not(:disabled) {
+      background: #4f46e5;
+    }
+
+    .nav-button:disabled {
+      background: #cbd5e1;
+      cursor: not-allowed;
+    }
+
+    .progress-indicator {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .score-display {
+      background: #10b981;
+      color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .score-display h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .score-display p {
+      font-size: 1.2rem;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="player-container">
+    <!-- Header -->
+    <div class="player-header">
+      <div class="player-title">{{COURSE_TITLE}}</div>
+      <button class="exit-button" onclick="exitCourse()">Exit Course</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="player-content">
+      <div class="slide-container" id="slideContainer">
+        <!-- Slide content will be injected here -->
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navigation">
+      <button class="nav-button" id="prevButton" onclick="previousSlide()">Previous</button>
+      <div class="progress-indicator" id="progressIndicator">Slide 1 of X</div>
+      <button class="nav-button" id="nextButton" onclick="nextSlide()">Next</button>
+    </div>
+  </div>
+
+  <script>
+    // Course Data (injected during package generation)
+    const courseData = {{COURSE_DATA}};
+    
+    // State Management
+    let currentSlideIndex = 0;
+    let quizAnswers = {};
+    let courseCompleted = false;
+    
+    // Configuration
+    const PASSING_SCORE = {{PASSING_SCORE}};
+    const HAS_QUIZ = {{HAS_QUIZ}};
+    
+    // Initialize course on load
+    window.addEventListener('load', function() {
+      // Restore bookmark if exists
+      const suspendData = getSuspendData();
+      
+      if (suspendData) {
+        currentSlideIndex = suspendData.l || 0;
+        quizAnswers = suspendData.q || {};
+      }
+      
+      renderSlide();
+    });
+    
+    // Render current slide
+    function renderSlide() {
+      const slide = courseData.lessons[currentSlideIndex];
+      const container = document.getElementById('slideContainer');
+      
+      if (!slide) {
+        showCompletionScreen();
+        return;
+      }
+      
+      let html = '<div class="slide-content">';
+      
+      // Slide image
+      if (slide.imageUrl) {
+        html += `<img src="${slide.imageUrl}" alt="Slide ${currentSlideIndex + 1}" class="slide-image">`;
+      }
+      
+      // Slide summary
+      html += `<div class="slide-summary">${slide.contentSummary}</div>`;
+      
+      // Quiz (if this is the last slide and quiz exists)
+      if (currentSlideIndex === courseData.lessons.length - 1 && courseData.quiz && courseData.quiz.length > 0) {
+        html += renderQuiz();
+      }
+      
+      html += '</div>';
+      
+      container.innerHTML = html;
+      
+      // Update navigation
+      updateNavigation();
+      
+      // Update progress
+      updateProgress();
+      
+      // Save bookmark
+      saveBookmark();
+    }
+    
+    // Render quiz
+    function renderQuiz() {
+      let html = '<div class="quiz-container">';
+      
+      courseData.quiz.forEach((question, qIndex) => {
+        const questionId = `q${qIndex}`;
+        const userAnswer = quizAnswers[questionId];
+        
+        html += `<div class="quiz-question">${qIndex + 1}. ${question.question}</div>`;
+        html += '<div class="quiz-options">';
+        
+        question.options.forEach((option, oIndex) => {
+          const optionLetter = String.fromCharCode(65 + oIndex); // A, B, C, D
+          const isSelected = userAnswer === optionLetter;
+          const isCorrect = question.correctAnswer === optionLetter;
+          
+          let optionClass = 'quiz-option';
+          if (isSelected) optionClass += ' selected';
+          
+          html += `<div class="${optionClass}" onclick="selectAnswer('${questionId}', '${optionLetter}')">
+            <strong>${optionLetter}.</strong> ${option}
+          </div>`;
+        });
+        
+        html += '</div>';
+        
+        // Show explanation if answered
+        if (userAnswer) {
+          html += `<div class="quiz-explanation">${question.explanation}</div>`;
+        }
+      });
+      
+      html += '</div>';
+      
+      return html;
+    }
+    
+    // Select quiz answer
+    function selectAnswer(questionId, answer) {
+      quizAnswers[questionId] = answer;
+      
+      // Save bookmark with quiz answers
+      saveBookmark();
+      
+      // Re-render to show selection
+      renderSlide();
+      
+      // Check if all questions answered
+      if (Object.keys(quizAnswers).length === courseData.quiz.length) {
+        // Calculate and submit score
+        setTimeout(() => {
+          submitQuiz();
+        }, 500);
+      }
+    }
+    
+    // Submit quiz and calculate score
+    function submitQuiz() {
+      let correctCount = 0;
+      
+      courseData.quiz.forEach((question, qIndex) => {
+        const questionId = `q${qIndex}`;
+        const userAnswer = quizAnswers[questionId];
+        
+        if (userAnswer === question.correctAnswer) {
+          correctCount++;
+        }
+      });
+      
+      const score = Math.round((correctCount / courseData.quiz.length) * 100);
+      
+      // Set SCORM score
+      setScore(score);
+      
+      // Set completion status
+      const status = score >= PASSING_SCORE ? 'passed' : 'failed';
+      setCompletionStatus(status, score, PASSING_SCORE);
+      
+      // Commit data
+      commitData();
+      
+      // Mark as completed
+      courseCompleted = true;
+      
+      // Show completion screen
+      setTimeout(() => {
+        showCompletionScreen();
+      }, 2000);
+    }
+    
+    // Show completion screen
+    function showCompletionScreen() {
+      const container = document.getElementById('slideContainer');
+      
+      let html = '<div class="slide-content">';
+      
+      if (HAS_QUIZ) {
+        const score = calculateCurrentScore();
+        const passed = score >= PASSING_SCORE;
+        
+        html += `<div class="score-display" style="background: ${passed ? '#10b981' : '#ef4444'}">
+          <h2>${passed ? 'Congratulations!' : 'Course Complete'}</h2>
+          <p>Your Score: ${score}%</p>
+          <p>${passed ? 'You passed!' : `Passing score: ${PASSING_SCORE}%`}</p>
+        </div>`;
+      } else {
+        // No quiz - just mark as completed
+        setCompletionStatus('completed', null, PASSING_SCORE);
+        commitData();
+        
+        html += `<div class="score-display">
+          <h2>Course Complete!</h2>
+          <p>Thank you for completing this course.</p>
+        </div>`;
+      }
+      
+      html += '</div>';
+      
+      container.innerHTML = html;
+      
+      // Hide navigation
+      document.getElementById('prevButton').style.display = 'none';
+      document.getElementById('nextButton').style.display = 'none';
+    }
+    
+    // Calculate current score
+    function calculateCurrentScore() {
+      if (!courseData.quiz || courseData.quiz.length === 0) return 0;
+      
+      let correctCount = 0;
+      
+      courseData.quiz.forEach((question, qIndex) => {
+        const questionId = `q${qIndex}`;
+        const userAnswer = quizAnswers[questionId];
+        
+        if (userAnswer === question.correctAnswer) {
+          correctCount++;
+        }
+      });
+      
+      return Math.round((correctCount / courseData.quiz.length) * 100);
+    }
+    
+    // Save bookmark (minified suspend_data)
+    function saveBookmark() {
+      const suspendData = {
+        l: currentSlideIndex,
+        t: Math.floor(Date.now() / 1000),
+        q: quizAnswers
+      };
+      
+      setSuspendData(suspendData);
+      commitData();
+    }
+    
+    // Navigation functions
+    function nextSlide() {
+      if (currentSlideIndex < courseData.lessons.length - 1) {
+        currentSlideIndex++;
+        renderSlide();
+      } else if (currentSlideIndex === courseData.lessons.length - 1) {
+        // Last slide - show completion
+        showCompletionScreen();
+      }
+    }
+    
+    function previousSlide() {
+      if (currentSlideIndex > 0) {
+        currentSlideIndex--;
+        renderSlide();
+      }
+    }
+    
+    // Update navigation buttons
+    function updateNavigation() {
+      const prevButton = document.getElementById('prevButton');
+      const nextButton = document.getElementById('nextButton');
+      
+      prevButton.disabled = currentSlideIndex === 0;
+      
+      if (currentSlideIndex === courseData.lessons.length - 1) {
+        nextButton.textContent = 'Finish';
+      } else {
+        nextButton.textContent = 'Next';
+      }
+    }
+    
+    // Update progress indicator
+    function updateProgress() {
+      const indicator = document.getElementById('progressIndicator');
+      indicator.textContent = `Slide ${currentSlideIndex + 1} of ${courseData.lessons.length}`;
+    }
+    
+    // Exit course handler
+    function exitCourse() {
+      if (confirm('Are you sure you want to exit the course? Your progress will be saved.')) {
+        // Save final bookmark
+        saveBookmark();
+        
+        // Finish SCORM session
+        finishSCORM();
+        
+        // Notify parent window
+        if (window.parent !== window) {
+          window.parent.postMessage({ type: 'SCORM_EXIT' }, '*');
+        }
+        
+        // Close window (may not work in all browsers)
+        window.close();
+      }
+    }
+    
+    // Handle browser close/refresh
+    window.addEventListener('beforeunload', function(e) {
+      saveBookmark();
+    });
+    
+    // Listen for exit messages from parent
+    window.addEventListener('message', function(event) {
+      if (event.data && event.data.type === 'SCORM_EXIT') {
+        finishSCORM();
+      }
+    });
+  </script>
+</body>
+</html>

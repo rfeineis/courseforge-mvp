@@ -27,7 +27,8 @@
     "zod": "^3.24.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "wouter": "^3.5.2"
+    "wouter": "^3.5.2",
+    "adm-zip": "^0.5.16"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
@@ -36,6 +37,7 @@
     "@types/better-sqlite3": "^7.6.12",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
+    "@types/adm-zip": "^0.5.7",
     "@vitejs/plugin-react": "^4.3.4",
     "typescript": "^5.7.2",
     "tsx": "^4.19.2",
