@@ -1,311 +1,49 @@
 # CourseForge - Development Roadmap
 
-## Phase 14: Marketing & Website Architecture (Preparation)
+**Status:** Core MVP Complete ✅  
+**Focus:** R&D Phase + High-ROI Features  
+**Last Updated:** 2025-11-29
+
+---
+
+## 🎯 Strategic Overview
+
+### Core MVP (Complete ✅)
+- ✅ Database infrastructure (SQLite dev / MySQL prod)
+- ✅ SCORM 1.2/2004 export with compliance validation
+- ✅ Quiz Editor with undo/redo (deep clone support)
+- ✅ S3 storage with security hardening
+- ✅ tRPC v11 end-to-end type safety
+- ✅ React 19 + Vite + Tailwind v4 frontend
+
+### Current Phase: R&D + Scale
+Focus on high-ROI features that differentiate CourseForge from competitors.
+
+---
+
+## Phase 15: Legacy Video Remastering (R&D Priority)
 
 ### Overview
-Preparing for market launch targeting three specific markets: YouTubers, Corporate, and Zoom Coaches.
-
----
-
-### 14.1 Define "Splitter" Strategy
-- [ ] **Draft copy for the 3-way homepage** (Creators vs. Corporate vs. Coaches)
-  - [ ] Hero section with market selector
-  - [ ] Value proposition for each segment
-  - [ ] CTA buttons for each funnel
-  - [ ] Social proof tailored to each market
-
----
-
-### 14.2 Content Creator Funnel
-
-#### Lead Magnet Development
-- [ ] **Draft "AdSense vs. Course" calculator logic** (for lead magnet)
-  - [ ] Input fields: Monthly views, CPM, niche, subscriber count
-  - [ ] Calculate current AdSense revenue
-  - [ ] Project course revenue (based on conversion rates)
-  - [ ] Show ROI comparison
-  - [ ] Email capture for full report
-
-#### Beta Outreach
-- [ ] **Identify top 50 "Edu-Tuber" targets** for beta outreach
-  - [ ] Research educational YouTube channels (100k-1M subscribers)
-  - [ ] Filter by niche (tech, business, design, productivity)
-  - [ ] Create outreach spreadsheet with contact info
-  - [ ] Draft personalized outreach email template
-  - [ ] Set up beta program landing page
-
----
-
-### 14.3 Corporate Funnel
-
-#### Content Marketing
-- [ ] **Create "SCORM Compliance" whitepaper/PDF** (using our Phase 12b technical details)
-  - [ ] Executive summary
-  - [ ] SCORM 1.2 vs 2004 comparison
-  - [ ] Compliance checklist
-  - [ ] Implementation guide
-  - [ ] Case studies (if available)
-  - [ ] Download gate with email capture
-
-#### Additional Corporate Assets
-- [ ] **LMS Integration Guide**
-  - [ ] Moodle integration steps
-  - [ ] Canvas integration steps
-  - [ ] Blackboard integration steps
-  - [ ] SCORM Cloud validation guide
-
-- [ ] **Enterprise Feature Sheet**
-  - [ ] Bulk user management
-  - [ ] SSO integration
-  - [ ] Custom branding
-  - [ ] Analytics and reporting
-  - [ ] SLA and support tiers
-
----
-
-### 14.4 Zoom Coach Funnel
-
-#### Zoom Integration Research
-- [ ] **Research Zoom App Marketplace submission requirements**
-  - [ ] Review Zoom Apps SDK documentation
-  - [ ] Identify required OAuth scopes
-  - [ ] Understand approval process timeline
-  - [ ] Check compliance requirements
-  - [ ] Review app listing guidelines
-
-#### Workflow Documentation
-- [ ] **Draft "Zoom Recording to Course" workflow documentation**
-  - [ ] Step 1: Connect Zoom account
-  - [ ] Step 2: Select recording
-  - [ ] Step 3: Auto-transcribe with Gemini
-  - [ ] Step 4: Generate slides from transcript
-  - [ ] Step 5: Add quiz questions
-  - [ ] Step 6: Publish course
-  - [ ] Include screenshots and video walkthrough
-
-#### Coach-Specific Features
-- [ ] **Define coach-specific features**
-  - [ ] Webinar replay packaging
-  - [ ] Drip content scheduling
-  - [ ] Student progress tracking
-  - [ ] Certificate generation
-  - [ ] Payment integration (Stripe/PayPal)
-
----
-
-### 14.5 Website Tech Stack Validation
-
-#### Platform Selection
-- [ ] **Validate WordPress + Elementor + MemberPress** can handle "Three Tiered Pricing"
-  - [ ] Test pricing table creation
-  - [ ] Verify plan switching functionality
-  - [ ] Test payment gateway integration
-  - [ ] Check mobile responsiveness
-  - [ ] Validate SEO capabilities
-
-#### Pricing Tiers Research
-- [ ] **Define pricing structure**
-  - [ ] **Creator Plan**
-    - Monthly price point
-    - Feature limits (projects, storage, exports)
-    - Target: Solo creators, educators
-  - [ ] **Corporate Plan**
-    - Monthly/annual pricing
-    - Enterprise features (SSO, bulk users, custom branding)
-    - Target: Training departments, HR teams
-  - [ ] **Coach Plan**
-    - Monthly price point
-    - Zoom integration, drip content, certificates
-    - Target: Online coaches, consultants
-
-#### Website Infrastructure
-- [ ] **Set up hosting environment**
-  - [ ] Choose hosting provider (WP Engine, Kinsta, or Cloudways)
-  - [ ] Configure CDN (Cloudflare)
-  - [ ] Set up SSL certificate
-  - [ ] Configure backup system
-  - [ ] Set up staging environment
-
-- [ ] **Install and configure plugins**
-  - [ ] Elementor Pro
-  - [ ] MemberPress
-  - [ ] WooCommerce (if needed)
-  - [ ] SEO plugin (Yoast or Rank Math)
-  - [ ] Analytics (Google Analytics, Hotjar)
-  - [ ] Email marketing integration (ConvertKit, Mailchimp)
-
----
-
-### 14.6 Marketing Assets
-
-#### Visual Assets
-- [ ] **Design marketing materials**
-  - [ ] Logo and brand guidelines
-  - [ ] Social media templates
-  - [ ] Email templates
-  - [ ] Presentation deck
-  - [ ] Demo video script
-
-#### Content Strategy
-- [ ] **Blog content calendar**
-  - [ ] "How to monetize YouTube with courses" (Creator)
-  - [ ] "SCORM compliance made easy" (Corporate)
-  - [ ] "Turn Zoom recordings into revenue" (Coach)
-  - [ ] SEO keyword research for each market
-
-#### Social Proof
-- [ ] **Collect testimonials and case studies**
-  - [ ] Beta user testimonials
-  - [ ] Before/after metrics
-  - [ ] Video testimonials
-  - [ ] Logo wall (if corporate clients)
-
----
-
-### 14.7 Launch Preparation
-
-#### Pre-Launch Checklist
-- [ ] **Set up analytics and tracking**
-  - [ ] Google Analytics 4
-  - [ ] Facebook Pixel
-  - [ ] LinkedIn Insight Tag
-  - [ ] Conversion tracking
-
-- [ ] **Email sequences**
-  - [ ] Welcome sequence (for each market)
-  - [ ] Onboarding sequence
-  - [ ] Nurture sequence
-  - [ ] Re-engagement sequence
-
-- [ ] **Support infrastructure**
-  - [ ] Knowledge base articles
-  - [ ] FAQ page
-  - [ ] Support ticket system
-  - [ ] Live chat (Intercom, Drift)
-
-#### Go-to-Market Strategy
-- [ ] **Launch timeline**
-  - [ ] Soft launch (beta users)
-  - [ ] Product Hunt launch
-  - [ ] Social media announcement
-  - [ ] Email blast to waitlist
-  - [ ] Paid advertising (if budget allows)
-
----
-
-## Notes
-
-### Market Segmentation Rationale
-
-**YouTubers/Creators:**
-- Pain point: AdSense revenue is unpredictable and declining
-- Solution: Turn existing content into courses for recurring revenue
-- Key feature: YouTube transcript import, auto-slide generation
-
-**Corporate:**
-- Pain point: Expensive LMS implementations, SCORM compliance headaches
-- Solution: Fast, compliant course creation with SCORM export
-- Key feature: SCORM 1.2/2004 compliance, enterprise features
-
-**Zoom Coaches:**
-- Pain point: Manual course creation from webinar recordings
-- Solution: Automated course generation from Zoom recordings
-- Key feature: Zoom integration, drip content, certificates
-
-### Competitive Positioning
-
-**vs. Teachable/Thinkific:**
-- We focus on course *creation*, they focus on course *hosting*
-- Our AI-powered generation is faster
-- We export to any LMS (SCORM)
-
-**vs. Articulate/Captivate:**
-- We're 10x faster with AI automation
-- Modern, web-based interface
-- More affordable for small teams
-
-**vs. Generic AI tools:**
-- We're purpose-built for course creation
-- SCORM compliance out of the box
-- Integrated workflow (transcript → slides → quiz → export)
-
----
-
-## Success Metrics
-
-### Phase 14 KPIs
-- [ ] 3-way homepage conversion rate > 5%
-- [ ] Email capture rate > 15% (lead magnets)
-- [ ] Beta waitlist: 100+ signups (50 per market)
-- [ ] SCORM whitepaper downloads: 50+
-- [ ] Zoom integration research complete
-- [ ] Pricing validated with 10+ user interviews
-
----
-
-## Timeline Estimate
-
-- **Week 1-2:** Copy writing, asset creation
-- **Week 3-4:** Website development (WordPress setup)
-- **Week 5-6:** Lead magnet development, beta outreach
-- **Week 7-8:** Content creation, SEO optimization
-- **Week 9-10:** Testing, refinement, soft launch prep
-
-**Total:** ~10 weeks to market-ready website and marketing assets
-
----
-
-## Dependencies
-
-### Technical Dependencies
-- SCORM export functionality (Phase 12b) ✅ Complete
-- Database production readiness ✅ Complete
-- Quiz editor with undo/redo ✅ Complete
-
-### Business Dependencies
-- Pricing strategy finalized
-- Legal review (terms of service, privacy policy)
-- Payment processing setup (Stripe/PayPal)
-- Customer support infrastructure
-
----
-
-## Next Steps
-
-1. **Immediate:** Draft 3-way homepage copy
-2. **This week:** Research top 50 Edu-Tubers
-3. **Next week:** Create SCORM whitepaper outline
-4. **Month 1:** Complete all Phase 14 tasks
-5. **Month 2:** Soft launch with beta users
-
----
-
-*Last updated: 2025-11-29*
-
-
----
-
-## Phase 15: Legacy Video Remastering (The "Glow Up" Engine)
-
-### Overview
-Transform outdated training videos into modern, professional courses by replacing old slides with AI-generated 4K graphics while preserving the original audio and content.
+**The "Glow Up" Engine** - Transform outdated training videos into modern, professional courses by replacing old slides with AI-generated 4K graphics while preserving the original audio.
 
 **Value Proposition:** "Give your 2015 webinar a 2025 makeover in 10 minutes."
 
+**Target Markets:**
+- Corporate L&D (refresh training libraries)
+- Content Creators (upgrade old YouTube videos)
+- Course Creators (transform webinars into premium courses)
+
 ---
 
-### 15.1 Architecture Design
-
-#### RemasterService
-- [ ] **Design the `RemasterService` to ingest a video file + transcript**
+### 15.1 Architecture
+- [ ] **Design `RemasterService`** (Video + Transcript Ingestion)
   - [ ] Input validation (video format, size limits)
   - [ ] Transcript extraction (if not provided)
   - [ ] Video metadata extraction (duration, resolution, audio track)
   - [ ] Storage strategy for source files and outputs
   - [ ] Queue system for long-running remaster jobs
 
-#### Service Structure
-- [ ] **Create service architecture**
+- [ ] **Service Structure**
   ```typescript
   interface RemasterInput {
     videoFile: File;
@@ -317,235 +55,109 @@ Transform outdated training videos into modern, professional courses by replacin
       logo?: File;
     };
   }
-  
-  interface RemasterOutput {
-    remasteredVideo: string;  // URL to final video
-    slideImages: string[];    // URLs to generated slides
-    visualStream: VisualStreamItem[];
-    processingTime: number;
-  }
   ```
 
 ---
 
 ### 15.2 AI Director Agent
-
-#### Course Forge Architect Integration
-- [ ] **Implement the "Course Forge Architect" prompt logic**
-  - [ ] Reuse existing prompt from SCORM generation
+- [ ] **Implement "Course Forge Architect" agent** (Transcript → Visual Stream JSON)
+  - [ ] Reuse existing prompt logic from SCORM generation
   - [ ] Adapt for video remastering context
   - [ ] Add visual style parameters
   - [ ] Include brand guideline inputs
 
-#### Topic Detection Logic
-- [ ] **Analyze transcript → Detect topic shifts → Output "Visual Stream" JSON**
-  - [ ] **Topic Shift Detection:**
-    - [ ] Use Gemini to identify natural topic boundaries
-    - [ ] Analyze semantic changes in content
-    - [ ] Detect speaker transitions (if multiple speakers)
-    - [ ] Identify slide-worthy moments (definitions, lists, diagrams)
-  
-  - [ ] **Visual Stream Generation:**
-    ```json
-    {
-      "visual_stream": [
-        {
-          "slide_id": 1,
-          "timestamp_start": "00:00",
-          "timestamp_end": "01:30",
-          "content_summary": "Introduction to SCORM compliance",
-          "nano_banana_prompt": "Professional corporate slide showing 'SCORM Compliance' as main title with abstract network connections in background. High fidelity, 4K resolution, modern minimalist aesthetic. Color scheme: navy blue and white.",
-          "visual_reasoning": "Opening slide needs to establish authority and professionalism",
-          "key_text_overlay": "SCORM Compliance Made Simple"
-        }
-      ]
-    }
-    ```
+- [ ] **Topic Detection Logic**
+  - [ ] Use Gemini to identify natural topic boundaries
+  - [ ] Analyze semantic changes in content
+  - [ ] Detect slide-worthy moments (definitions, lists, diagrams)
+  - [ ] Generate Visual Stream JSON with image prompts
 
-#### AI Director Configuration
-- [ ] **Prompt engineering for visual consistency**
-  - [ ] Style guide enforcement across all slides
-  - [ ] Brand color consistency
-  - [ ] Typography standards
-  - [ ] Layout templates (title slide, content slide, diagram slide)
+- [ ] **Output Format**
+  ```json
+  {
+    "visual_stream": [
+      {
+        "slide_id": 1,
+        "timestamp_start": "00:00",
+        "timestamp_end": "01:30",
+        "content_summary": "Introduction to SCORM compliance",
+        "nano_banana_prompt": "Professional corporate slide showing 'SCORM Compliance' as main title. 4K, navy blue and white.",
+        "key_text_overlay": "SCORM Compliance Made Simple"
+      }
+    ]
+  }
+  ```
 
 ---
 
-### 15.3 Image Generation Pipeline
-
-#### API Integration
-- [ ] **Integrate "Nano Banana Pro" (Google Imagen / DALL-E 3) API**
+### 15.3 Visual Engine
+- [ ] **Integrate Image Gen API** (Nano Banana/Imagen) for slide creation
   - [ ] **Primary:** Google Imagen 3 via Vertex AI
-    - [ ] Set up Vertex AI credentials
-    - [ ] Implement rate limiting
-    - [ ] Handle quota management
-    - [ ] Error handling and retries
-  
   - [ ] **Fallback:** DALL-E 3 via OpenAI
-    - [ ] Configure OpenAI API client
-    - [ ] Implement prompt optimization for DALL-E
-    - [ ] Handle style consistency differences
+  - [ ] Aspect ratio enforcement (16:9, 3840x2160 for 4K)
+  - [ ] Batch processing (generate multiple slides in parallel)
+  - [ ] Quality control (text legibility, brand colors, resolution)
 
-#### Generation Logic
-- [ ] **Auto-generate 4K 16:9 slides based on Visual Stream prompts**
-  - [ ] **Aspect Ratio Enforcement:** 16:9 (3840x2160 for 4K, 1920x1080 for HD)
-  - [ ] **Batch Processing:** Generate multiple slides in parallel
-  - [ ] **Quality Control:**
-    - [ ] Text legibility check (OCR verification)
-    - [ ] Brand color validation
-    - [ ] Resolution verification
-    - [ ] Aspect ratio validation
-  
-  - [ ] **Prompt Enhancement:**
-    ```typescript
-    function enhancePrompt(basePrompt: string, options: RemasterOptions): string {
-      const aspectRatio = "16:9 aspect ratio, horizontal orientation";
-      const resolution = "4K resolution, ultra high definition";
-      const style = `${options.slideStyle} corporate aesthetic`;
-      const colors = options.brandColors 
-        ? `Color palette: ${options.brandColors.join(', ')}` 
-        : '';
-      
-      return `${basePrompt}. ${aspectRatio}. ${resolution}. ${style}. ${colors}`;
-    }
-    ```
+- [ ] **Prompt Enhancement**
+  ```typescript
+  function enhancePrompt(basePrompt: string, options: RemasterOptions): string {
+    return `${basePrompt}. 16:9 aspect ratio. 4K resolution. ${options.slideStyle} corporate aesthetic. Color palette: ${options.brandColors.join(', ')}`;
+  }
+  ```
 
-#### Post-Processing
-- [ ] **Image optimization and enhancement**
+- [ ] **Post-Processing**
   - [ ] Upscaling (if needed)
   - [ ] Color correction
   - [ ] Sharpening
   - [ ] Compression (for web delivery)
-  - [ ] Watermark addition (optional)
 
 ---
 
-### 15.4 Frontend Studio (RemasterEditor.tsx)
-
-#### Timeline View
-- [ ] **Build a "Timeline View" showing the original video track**
+### 15.4 Remaster UI
+- [ ] **Build `RemasterEditor`** (Timeline View with Slide Overlay)
   - [ ] Video player with timeline scrubber
   - [ ] Waveform visualization (audio track)
   - [ ] Timestamp markers for topic shifts
-  - [ ] Playback controls (play, pause, seek)
-  - [ ] Speed controls (0.5x, 1x, 1.5x, 2x)
+  - [ ] Playback controls (play, pause, seek, speed)
 
-#### Slide Track Overlay
-- [ ] **Overlay the generated "Slide Track" on top**
+- [ ] **Slide Track Overlay**
   - [ ] Visual representation of slide segments
   - [ ] Thumbnail previews of generated slides
   - [ ] Timestamp ranges for each slide
-  - [ ] Transition indicators
   - [ ] Drag-to-adjust slide timing
 
-#### Interactive Editing
-- [ ] **Allow swapping/regenerating individual slides**
-  - [ ] **Slide Actions:**
-    - [ ] Regenerate with same prompt
-    - [ ] Edit prompt and regenerate
-    - [ ] Upload custom image
-    - [ ] Delete slide (extend previous/next)
-    - [ ] Split slide into two
-    - [ ] Merge with adjacent slide
-  
-  - [ ] **UI Components:**
-    ```tsx
-    interface SlideEditorProps {
-      slide: VisualStreamItem;
-      onRegenerate: (slideId: number, newPrompt?: string) => void;
-      onReplace: (slideId: number, imageFile: File) => void;
-      onDelete: (slideId: number) => void;
-      onTimingAdjust: (slideId: number, start: number, end: number) => void;
-    }
-    ```
+- [ ] **Interactive Editing**
+  - [ ] Regenerate slide with same prompt
+  - [ ] Edit prompt and regenerate
+  - [ ] Upload custom image
+  - [ ] Delete slide (extend previous/next)
+  - [ ] Split slide into two
+  - [ ] Merge with adjacent slide
 
-#### Preview Mode
-- [ ] **Real-time preview of remastered video**
+- [ ] **Preview Mode**
   - [ ] Side-by-side comparison (original vs. remastered)
   - [ ] Full-screen preview
-  - [ ] Export preview (low-res for speed)
   - [ ] A/B toggle for quick comparison
 
 ---
 
 ### 15.5 Rendering Engine
-
-#### FFmpeg Integration
-- [ ] **Use `ffmpeg` to burn the new slides over the old video (keeping original audio)**
-  - [ ] **Video Composition Strategy:**
-    ```bash
-    # Pseudocode for ffmpeg command
-    ffmpeg -i original_video.mp4 \
-           -i slide_001.png -i slide_002.png -i slide_003.png \
-           -filter_complex "[0:v][1:v]overlay=enable='between(t,0,90)'[v1]; \
-                            [v1][2:v]overlay=enable='between(t,90,180)'[v2]; \
-                            [v2][3:v]overlay=enable='between(t,180,270)'[out]" \
-           -map "[out]" -map 0:a \
-           -c:v libx264 -preset slow -crf 18 \
-           -c:a copy \
-           output.mp4
-    ```
-
-#### Rendering Pipeline
-- [ ] **Implement rendering service**
-  - [ ] **Input Preparation:**
-    - [ ] Extract audio from original video
-    - [ ] Prepare slide images with correct timing
-    - [ ] Generate transition effects (optional)
-  
-  - [ ] **Rendering Process:**
-    - [ ] Overlay slides at specified timestamps
-    - [ ] Maintain original audio track
-    - [ ] Apply transitions (fade, slide, etc.)
-    - [ ] Encode to target resolution
-    - [ ] Optimize for web streaming
-  
-  - [ ] **Output Formats:**
-    - [ ] MP4 (H.264 for compatibility)
-    - [ ] WebM (VP9 for web)
-    - [ ] 4K and 1080p versions
-    - [ ] Thumbnail generation
-
-#### Performance Optimization
-- [ ] **Rendering optimization**
+- [ ] **FFmpeg Integration** (burn slides over original video)
+  - [ ] Overlay slides at specified timestamps
+  - [ ] Maintain original audio track
+  - [ ] Apply transitions (fade, slide, etc.)
+  - [ ] Encode to target resolution (4K, 1080p)
   - [ ] Hardware acceleration (GPU encoding)
-  - [ ] Parallel processing for multiple videos
-  - [ ] Progress tracking and estimation
-  - [ ] Resume capability for failed renders
-  - [ ] Queue management for batch jobs
+
+- [ ] **Output Formats**
+  - [ ] MP4 (H.264 for compatibility)
+  - [ ] WebM (VP9 for web)
+  - [ ] 4K and 1080p versions
+  - [ ] Thumbnail generation
 
 ---
 
-### 15.6 Additional Features
-
-#### Brand Consistency
-- [ ] **Brand asset management**
-  - [ ] Logo placement (corner watermark)
-  - [ ] Color palette enforcement
-  - [ ] Font selection and consistency
-  - [ ] Template library (title slides, end cards)
-
-#### Quality Assurance
-- [ ] **Automated QA checks**
-  - [ ] Text legibility verification
-  - [ ] Audio sync validation
-  - [ ] Resolution verification
-  - [ ] Color accuracy check
-  - [ ] File size optimization
-
-#### Export Options
-- [ ] **Multiple export formats**
-  - [ ] Video formats (MP4, WebM, MOV)
-  - [ ] Resolution options (4K, 1080p, 720p)
-  - [ ] Compression presets (web, archive, presentation)
-  - [ ] Slide deck export (PDF, PPTX)
-  - [ ] Transcript export (SRT, VTT)
-
----
-
-### 15.7 Backend Infrastructure
-
-#### Database Schema
+### 15.6 Database Schema
 - [ ] **Add remaster-specific tables**
   ```sql
   CREATE TABLE remaster_jobs (
@@ -574,127 +186,19 @@ Transform outdated training videos into modern, professional courses by replacin
   );
   ```
 
-#### API Endpoints
-- [ ] **Create tRPC routers for remastering**
-  ```typescript
-  export const remasterRouter = router({
-    // Start remaster job
-    create: publicProcedure
-      .input(z.object({
-        projectId: z.number(),
-        videoUrl: z.string().url(),
-        transcript: z.string().optional(),
-        options: z.object({
-          targetResolution: z.enum(['1080p', '4K']),
-          slideStyle: z.enum(['corporate', 'modern', 'minimal']),
-          brandColors: z.array(z.string()).optional(),
-        }),
-      }))
-      .mutation(async ({ ctx, input }) => {
-        // Create remaster job
-      }),
-    
-    // Get job status
-    getStatus: publicProcedure
-      .input(z.object({ jobId: z.number() }))
-      .query(async ({ ctx, input }) => {
-        // Return job status and progress
-      }),
-    
-    // Regenerate specific slide
-    regenerateSlide: publicProcedure
-      .input(z.object({
-        jobId: z.number(),
-        slideId: z.number(),
-        newPrompt: z.string().optional(),
-      }))
-      .mutation(async ({ ctx, input }) => {
-        // Regenerate single slide
-      }),
-    
-    // Finalize and render
-    render: publicProcedure
-      .input(z.object({ jobId: z.number() }))
-      .mutation(async ({ ctx, input }) => {
-        // Start final rendering
-      }),
-  });
-  ```
-
 ---
 
-### 15.8 Use Cases & Target Markets
-
-#### Primary Use Cases
-1. **Corporate Training Refresh**
-   - Problem: 5-year-old training videos look dated
-   - Solution: Remaster with modern slides, keep proven audio
-   - ROI: Avoid expensive re-recording
-
-2. **YouTube Content Upgrade**
-   - Problem: Old videos have low CTR due to poor visuals
-   - Solution: Remaster thumbnails and slides
-   - ROI: Improved engagement and watch time
-
-3. **Webinar Repurposing**
-   - Problem: Zoom recordings have boring screen shares
-   - Solution: Replace with professional slides
-   - ROI: Convert webinars into sellable courses
-
-4. **Conference Talk Enhancement**
-   - Problem: Conference recordings have poor slide visibility
-   - Solution: Regenerate slides in 4K
-   - ROI: Professional portfolio pieces
-
-#### Target Customers
-- **Corporate L&D:** Refresh training libraries without re-recording
-- **Content Creators:** Upgrade old videos for better performance
-- **Course Creators:** Transform webinars into premium courses
-- **Speakers/Consultants:** Enhance conference talks for portfolios
-
----
-
-### 15.9 Pricing Strategy
-
-#### Remaster Credits System
-- [ ] **Define credit pricing**
-  - [ ] 1 credit = 1 minute of video remastered
-  - [ ] Bulk discounts (100 credits, 500 credits, 1000 credits)
-  - [ ] Subscription tiers include monthly credits
-  
-- [ ] **Credit consumption**
-  - [ ] Standard remaster (1080p): 1 credit/min
-  - [ ] 4K remaster: 2 credits/min
-  - [ ] Slide regeneration: 0.1 credit/slide
-  - [ ] Custom brand assets: +0.5 credits/min
-
-#### Add-On Pricing
-- [ ] **Premium features**
-  - [ ] Priority rendering queue: +$50/month
-  - [ ] Custom brand templates: $200 one-time
-  - [ ] White-label export: +$100/month
-  - [ ] API access: Custom pricing
-
----
-
-### 15.10 Success Metrics
-
-#### Phase 15 KPIs
+### 15.7 Success Metrics
 - [ ] Average remaster time < 5 minutes (for 10-min video)
 - [ ] Slide generation accuracy > 90% (minimal manual edits)
 - [ ] Customer satisfaction score > 4.5/5
-- [ ] Remaster completion rate > 95% (jobs not abandoned)
-- [ ] Average slides per minute: 0.5-1.5 (optimal pacing)
-
-#### Technical Metrics
-- [ ] Image generation success rate > 98%
-- [ ] FFmpeg rendering success rate > 99%
+- [ ] Remaster completion rate > 95%
 - [ ] Average cost per minute < $0.50 (API costs)
-- [ ] Storage efficiency (compression ratio > 50%)
 
 ---
 
-### 15.11 Timeline Estimate
+### 15.8 Timeline
+**Total:** ~12 weeks to production-ready remastering engine
 
 - **Week 1-2:** Architecture design, database schema
 - **Week 3-4:** AI Director Agent implementation
@@ -703,99 +207,266 @@ Transform outdated training videos into modern, professional courses by replacin
 - **Week 9-10:** FFmpeg rendering engine
 - **Week 11-12:** Testing, optimization, beta launch
 
-**Total:** ~12 weeks to production-ready remastering engine
+---
+
+## 🚀 Active Backlog (High-ROI Features)
+
+### Priority 1: Learner Analytics UI
+**Why:** Teachers need visibility into student progress. This is a core LMS feature.
+
+- [ ] **Build charts for `analyticsSessions` data** (Teacher View)
+  - [ ] Student progress dashboard
+  - [ ] Completion rates by lesson
+  - [ ] Quiz performance analytics
+  - [ ] Time spent per lesson
+  - [ ] Drop-off points visualization
+
+- [ ] **Data Visualization Components**
+  - [ ] Line charts (progress over time)
+  - [ ] Bar charts (quiz scores)
+  - [ ] Heatmaps (engagement patterns)
+  - [ ] Table view (student list with filters)
+
+- [ ] **Export Options**
+  - [ ] CSV export (raw data)
+  - [ ] PDF report generation
+  - [ ] Email digest (weekly/monthly)
+
+**Timeline:** 2-3 weeks  
+**Impact:** High (required for corporate/education markets)
 
 ---
 
-### 15.12 Dependencies
+### Priority 2: PDF/Text Ingestion
+**Why:** Not all content starts as video. Many courses come from documents.
 
-#### Technical Dependencies
-- ✅ SCORM export (Phase 12b) - Reuse Visual Stream logic
-- ✅ Database hardening (Phase 13) - Production-ready infrastructure
-- ✅ Quiz Editor (Phase 13) - Undo/redo patterns for slide editing
-- ⏳ Video storage (S3) - Large file handling
-- ⏳ FFmpeg installation - Server-side video processing
-- ⏳ Vertex AI / OpenAI API - Image generation
+- [ ] **Upgrade `batchImport` to accept PDFs/Docs** (not just VTTs)
+  - [ ] PDF parsing (extract text and structure)
+  - [ ] Word document parsing (.docx)
+  - [ ] Markdown parsing
+  - [ ] Plain text parsing
 
-#### Business Dependencies
-- [ ] Imagen/DALL-E API budget allocation
-- [ ] Video storage cost analysis
-- [ ] Rendering infrastructure (CPU/GPU servers)
-- [ ] Legal review (copyright, fair use for remasters)
+- [ ] **Content Structuring**
+  - [ ] Auto-detect headings (H1, H2, H3)
+  - [ ] Convert headings to lesson boundaries
+  - [ ] Extract images from documents
+  - [ ] Preserve formatting (bold, italic, lists)
 
----
+- [ ] **AI Enhancement**
+  - [ ] Use Gemini to improve extracted text
+  - [ ] Generate slide prompts from document sections
+  - [ ] Auto-create quiz questions from content
 
-### 15.13 Competitive Analysis
-
-#### vs. Manual Video Editing
-- **Traditional:** 2-4 hours per 10-min video
-- **CourseForge:** 10 minutes (90% automated)
-- **Cost:** $200-500 (freelancer) vs. $5-10 (our credits)
-
-#### vs. AI Video Tools (Descript, Runway)
-- **Descript:** Focuses on editing, not slide generation
-- **Runway:** Generative video, not course-specific
-- **CourseForge:** Purpose-built for training/education content
-
-#### vs. PowerPoint + Screen Recording
-- **Manual Process:** Create slides, re-record, edit
-- **Time:** 4-8 hours
-- **CourseForge:** Automated slide generation, no re-recording
+**Timeline:** 3-4 weeks  
+**Impact:** High (expands use cases beyond video)
 
 ---
 
-### 15.14 Risk Mitigation
+### Priority 3: Advanced Branding
+**Why:** Corporate clients need white-label capabilities.
 
-#### Technical Risks
-- [ ] **Image generation quality inconsistent**
-  - Mitigation: Manual regeneration, prompt refinement
-  
-- [ ] **FFmpeg rendering failures**
-  - Mitigation: Retry logic, error logging, fallback encoders
+- [ ] **Finish Color Picker/Font Selector UI**
+  - [ ] Brand color palette picker (primary, secondary, accent)
+  - [ ] Font selection (Google Fonts integration)
+  - [ ] Logo upload and positioning
+  - [ ] Preview mode (see changes in real-time)
 
-- [ ] **High API costs**
-  - Mitigation: Caching, batch processing, cost caps
+- [ ] **Brand Template System**
+  - [ ] Save brand presets
+  - [ ] Apply brand to all slides
+  - [ ] Export brand guidelines (PDF)
 
-#### Business Risks
-- [ ] **Copyright concerns (remixing others' videos)**
-  - Mitigation: Terms of service, user owns content, watermarking
+- [ ] **White-Label Options**
+  - [ ] Remove CourseForge branding (premium feature)
+  - [ ] Custom domain support
+  - [ ] Custom email templates
 
-- [ ] **Low adoption (feature complexity)**
-  - Mitigation: Guided onboarding, templates, presets
-
----
-
-### 15.15 Future Enhancements
-
-#### Phase 15B (Future)
-- [ ] **AI voice cloning** (replace audio with better quality)
-- [ ] **Multi-language support** (generate slides in different languages)
-- [ ] **Animated slides** (motion graphics, transitions)
-- [ ] **Speaker detection** (auto-generate speaker labels)
-- [ ] **Background music** (AI-generated or library)
-- [ ] **Captions/subtitles** (auto-generated, burned-in)
+**Timeline:** 2-3 weeks  
+**Impact:** Medium-High (required for enterprise sales)
 
 ---
 
-## Notes
+## 📋 Phase 14: Marketing & Website (Ongoing)
 
-### The "Glow Up" Value Proposition
+### 14.1 Three-Market Strategy
+- [ ] **Draft 3-way homepage copy** (Creators vs. Corporate vs. Coaches)
+  - [ ] Hero section with market selector
+  - [ ] Value propositions per segment
+  - [ ] Tailored CTAs and social proof
 
-**Before:** Outdated 2015 webinar with pixelated slides  
-**After:** Modern 4K course with professional AI-generated graphics  
-**Time:** 10 minutes  
-**Cost:** $5-10 in credits  
+### 14.2 Content Creator Funnel
+- [ ] **"AdSense vs. Course" calculator** (lead magnet)
+- [ ] **Identify top 50 "Edu-Tuber" targets** for beta outreach
 
-**Tagline:** "Give your old videos a 2025 makeover."
+### 14.3 Corporate Funnel
+- [ ] **SCORM Compliance whitepaper** (using Phase 12b technical details)
+- [ ] **LMS Integration Guide** (Moodle, Canvas, Blackboard)
 
-### Market Positioning
+### 14.4 Zoom Coach Funnel
+- [ ] **Research Zoom App Marketplace** submission requirements
+- [ ] **"Zoom Recording to Course" workflow** documentation
 
-This feature differentiates CourseForge from:
-- Generic AI video tools (not course-specific)
-- Traditional video editors (too manual)
-- Course platforms (no remastering capability)
+### 14.5 Website Infrastructure
+- [ ] **WordPress + Elementor + MemberPress** validation
+- [ ] **Three-tiered pricing** setup (Creator, Corporate, Coach)
 
-**Unique Selling Point:** "The only platform that can upgrade your entire video library in an afternoon."
+**Timeline:** ~10 weeks (parallel with R&D)
+
+---
+
+## 🧊 The Icebox (Deprioritized / Future)
+
+### Rationale
+These features are valuable but not critical for initial market traction. Moving to "Future / On Hold" to maintain focus on high-ROI work.
+
+---
+
+### Native Mobile Apps (iOS/Android)
+**Why Deprioritized:** Web-first approach is sufficient. Mobile apps require significant maintenance overhead.
+
+**Future Consideration:**
+- [ ] React Native wrapper (if demand is high)
+- [ ] Progressive Web App (PWA) as interim solution
+
+**Estimated Timeline:** 6-8 months (if prioritized)
+
+---
+
+### Social Learning / Forums
+**Why Deprioritized:** Not a core differentiator. Existing tools (Slack, Discord) can integrate.
+
+**Future Consideration:**
+- [ ] Discussion boards per course
+- [ ] Peer review system
+- [ ] Community Q&A
+
+**Estimated Timeline:** 3-4 months (if prioritized)
+
+---
+
+### Voice Cloning
+**Why Deprioritized:** Too expensive for current pricing model. API costs are $0.10-0.50 per minute.
+
+**Future Consideration:**
+- [ ] ElevenLabs integration (if costs drop)
+- [ ] Premium add-on ($50/month)
+- [ ] Limited to enterprise tier
+
+**Estimated Timeline:** 2-3 months (if prioritized)
+
+---
+
+### A/B Testing
+**Why Deprioritized:** Premature optimization. Need baseline metrics first.
+
+**Future Consideration:**
+- [ ] A/B test slide variations
+- [ ] Test quiz question effectiveness
+- [ ] Optimize completion rates
+
+**Estimated Timeline:** 2-3 months (if prioritized)
+
+---
+
+### Other Deprioritized Features
+- [ ] **Gamification** (badges, leaderboards) - Nice-to-have, not critical
+- [ ] **Live Webinar Integration** - Complex, low ROI initially
+- [ ] **Multi-language UI** - English-first, expand later
+- [ ] **Advanced Video Editing** - Out of scope, use external tools
+- [ ] **Blockchain Certificates** - Buzzword, low demand
+
+---
+
+## 📊 Success Metrics (Overall)
+
+### Phase 15 (Remastering) KPIs
+- Average remaster time < 5 minutes (for 10-min video)
+- Slide generation accuracy > 90%
+- Customer satisfaction > 4.5/5
+- Remaster completion rate > 95%
+
+### Active Backlog KPIs
+- **Learner Analytics:** 80% of teachers use analytics weekly
+- **PDF Ingestion:** 30% of projects start from documents
+- **Advanced Branding:** 50% of corporate clients use custom branding
+
+### Phase 14 (Marketing) KPIs
+- 3-way homepage conversion rate > 5%
+- Email capture rate > 15% (lead magnets)
+- Beta waitlist: 100+ signups (50 per market)
+
+---
+
+## 🗓️ Timeline Summary
+
+### Q1 2025 (Current)
+- **Phase 15:** Legacy Video Remastering (12 weeks)
+- **Active Backlog:** Learner Analytics, PDF Ingestion, Branding (8 weeks)
+- **Phase 14:** Marketing website and funnels (10 weeks, parallel)
+
+### Q2 2025
+- Beta launch with remastering engine
+- Soft launch to 3 target markets
+- Iterate based on user feedback
+
+### Q3 2025
+- Scale infrastructure
+- Add features from Icebox (based on demand)
+- Expand to additional markets
+
+---
+
+## 🔗 Dependencies
+
+### Technical Dependencies (Complete ✅)
+- ✅ SCORM export functionality (Phase 12b)
+- ✅ Database production readiness (Phase 13)
+- ✅ Quiz editor with undo/redo (Phase 13)
+- ✅ S3 storage with security hardening (Phase 13)
+
+### New Dependencies (In Progress)
+- ⏳ Vertex AI / OpenAI API (image generation)
+- ⏳ FFmpeg installation (video processing)
+- ⏳ Large file storage (S3 optimization)
+
+### Business Dependencies
+- Pricing strategy finalized
+- Legal review (terms of service, privacy policy)
+- Payment processing setup (Stripe/PayPal)
+- Customer support infrastructure
+
+---
+
+## 🎯 Competitive Positioning
+
+**vs. Teachable/Thinkific:**
+- We focus on course *creation*, they focus on course *hosting*
+- AI-powered generation is 10x faster
+- Export to any LMS (SCORM)
+
+**vs. Articulate/Captivate:**
+- 10x faster with AI automation
+- Modern, web-based interface
+- More affordable for small teams
+
+**vs. Generic AI tools:**
+- Purpose-built for course creation
+- SCORM compliance out of the box
+- Integrated workflow (transcript → slides → quiz → export)
+
+**vs. Descript/Runway:**
+- Descript focuses on editing, not slide generation
+- Runway is generative video, not course-specific
+- CourseForge is purpose-built for training/education
+
+---
+
+## 📁 Repository
+
+**GitHub:** https://github.com/rfeineis/courseforge-mvp
+
+**Status:** Core MVP Complete ✅  
+**Current Focus:** Phase 15 (Remastering) + High-ROI Features
 
 ---
 
